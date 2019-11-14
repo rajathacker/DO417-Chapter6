@@ -1,0 +1,13 @@
+---
+- name: Testing firewall
+  hosts: all
+  tasks:
+  - name: Denying port 80
+    win_firewall_rule:
+      name: testing
+      state: present
+      enable: true
+      localport: 80
+      action: allow
+      direction: In
+      protocol: TCP

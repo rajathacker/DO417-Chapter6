@@ -5,9 +5,9 @@
   - name: Denying port 80
     win_firewall_rule:
       name: testing
-      state: absent
+      state: present
       enable: true
       localport: 80
-      action: allow
+      action: block
       direction: In
       protocol: TCP

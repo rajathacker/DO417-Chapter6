@@ -15,4 +15,5 @@
     uri:
       url: ec2-13-251-124-150.ap-southeast-1.compute.amazonaws.com
       return_content: yes
-      return_code: 200
+      return_code: 200  
+    delegate_to: localhost

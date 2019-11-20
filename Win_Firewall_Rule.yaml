@@ -10,4 +10,14 @@
       localport: 80
       action: block
       direction: In
-      protocol: TCP
+      protocol: TCP 
+  - name: verify the access
+    uri:
+      url: http://ec2-13-251-124-150.ap-southeast-1.compute.amazonaws.com
+      return_content: yes
+      status_code: 200  
+    delegate_to: localhost
+    register: out
+  - name: Printing the output
+    debug:
+      var: out

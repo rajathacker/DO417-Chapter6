@@ -1,0 +1,9 @@
+---
+- name: Creating a group
+  hosts: all
+  tasks:
+  - name: Create a new local group.
+    win_group:
+      name: developers
+      description: Developers Group
+      state: present

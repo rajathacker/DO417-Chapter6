@@ -1,0 +1,17 @@
+---
+- name: test
+  hosts: all
+  tasks:
+  - name: changing the owner
+    win_owner:
+      path: C:\Users\Administrator\Desktop\facts.txt
+      user: rajat
+      recurse: true
+  - name: Giving full access
+    win_acl:
+      path: C:\Users\Administrator\Desktop\facts.txt
+      user: rajat
+      rights: Read,Write,Modify,FullControl,Delete
+      type: allow
+      state: present
+...

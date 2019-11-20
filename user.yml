@@ -1,0 +1,8 @@
+---
+- name: Creating Users
+  hosts: all
+  tasks:
+  - name: Creating a local account
+  win_user:
+    name: newuser
+    state: present

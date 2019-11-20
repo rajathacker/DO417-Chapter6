@@ -1,0 +1,10 @@
+---
+- name: Adding users in a group
+  hosts: all
+  tasks:
+  - name: Adding a local and domain user to a local group.
+    win_group_membership:
+      name: developers
+      members:
+      - newusers
+      state: present

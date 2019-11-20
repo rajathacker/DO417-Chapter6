@@ -1,0 +1,8 @@
+---
+- name: Creating users profile
+  hosts: all
+  tasks:
+  - name: Create a local profile for an account.
+    win_user_profile:
+      uisername: newuser
+      state: present

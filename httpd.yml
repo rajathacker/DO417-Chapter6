@@ -1,6 +1,6 @@
 ---
 - name: Executing the httpd workflow
-  hosts: aws
+  hosts: all
   become: true
   tasks:
   - name: installing httpd

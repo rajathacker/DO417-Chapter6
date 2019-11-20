@@ -1,0 +1,18 @@
+---
+- name: Executing the httpd workflow
+  hosts: aws
+  become: true
+  tasks:
+  - name: installing httpd
+    yum:
+      name: httpd
+      state: latest
+  - name: copying the content in index.html
+    copy:
+      content: This is created by Ansible
+      dest: /var/www/html/index.html
+  - name: starting and enabling the service
+    service:
+      name: httpd
+      state: started
+      enabled: true
